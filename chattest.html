@@ -36,7 +36,7 @@
 		
 			{
 				"entityName": "Contact" ,
-				"saveToTranscript " : "ContactId",
+				"saveToTranscript" : "ContactId",
 				"showOnCreate": true,
 				"linkToEntityName": "Case",
 				"linkToEntityField": "ContactId",
@@ -48,6 +48,25 @@
 			}
 		];*/
 		
+		embedded_svc.settings.extraPrechatInfo = [
+		
+			{
+				"entityName": "Contact",
+				"showOnCreate": true,
+				"linkToEntityName": "Case",
+				"linkToEntityField": "ContactId",
+				"saveToTranscript": "ContactId",
+				"entityFieldMaps": [
+				
+				{"isExactMatch": true, "fieldName": "FirstName", "doCreate": true, "doFind": true, "label": "First Name"}, 
+				{"isExactMatch": true, "fieldName": "LastName",	"doCreate": true, "doFind": true, "label": "Last Name"}, 
+				{"isExactMatch": true, "fieldName": "Email", "doCreate": true, "doFind": true, "label": "Email"}
+				
+				]
+			}
+		];
+		
+		/*
 		embedded_svc.settings.extraPrechatInfo = [
 		
 		{
@@ -74,6 +93,7 @@
 		"showOnCreate": true,
 		"saveToTranscript": "ContactId"
 		}];
+		*/
 		
 		console.log('pre chat info: ', embedded_svc.settings.extraPrechatInfo);
 		
