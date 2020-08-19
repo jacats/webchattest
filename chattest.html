@@ -6,9 +6,6 @@
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
 		outline: 1px solid #005290;
 	}
-	.embeddedServiceHelpButton .helpButton .uiButton.helpButtonDisabled { 
-	display: none; 
-	}
 </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -31,78 +28,13 @@
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
 		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
-		
-		 /*embedded_svc.settings.extraPrechatInfo = [
-		
-			{
-				"entityName": "Contact" ,
-				"saveToTranscript" : "ContactId",
-				"showOnCreate": true,
-				"linkToEntityName": "Case",
-				"linkToEntityField": "ContactId",
-				"entityFieldMaps": [
-					{"isExactMatch": true , "fieldName": "FirstName" , "doCreate": true , "doFind": true , "label": "First Name"} ,
-					{"isExactMatch": true , "fieldName": "Email" , "doCreate": true , "doFind": true , "label": "Email"} ,
-					{"isExactMatch": true , "fieldName": "LastName" , "doCreate": true , "doFind": true , "label": "Last Name"}
-				]
-			}
-		];*/
-		
-		embedded_svc.settings.extraPrechatInfo = [
-		
-			{
-				"entityName": "Contact",
-				"showOnCreate": true,
-				"linkToEntityName": "Case",
-				"linkToEntityField": "ContactId",
-				"saveToTranscript": "ContactId",
-				"entityFieldMaps": [
-				
-				{"isExactMatch": true, "fieldName": "FirstName", "doCreate": true, "doFind": true, "label": "First Name"}, 
-				{"isExactMatch": true, "fieldName": "LastName",	"doCreate": true, "doFind": true, "label": "Last Name"}, 
-				{"isExactMatch": true, "fieldName": "Email", "doCreate": true, "doFind": true, "label": "Email"}
-				
-				]
-			}
-		];
-		
-		/*
-		embedded_svc.settings.extraPrechatInfo = [
-		
-		{
-		"entityFieldMaps": [{
-		"doCreate": true,
-		"doFind": true,
-		"fieldName": "LastName",
-		"isExactMatch": true,
-		"label": "Last Name"
-		}, {
-		"doCreate": true,
-		"doFind": true,
-		"fieldName": "FirstName",
-		"isExactMatch": true,
-		"label": "First Name"
-		}, {
-		"doCreate": true,
-		"doFind": true,
-		"fieldName": "Email",
-		"isExactMatch": true,
-		"label": "Email"
-		}],
-		"entityName": "Contact",
-		"showOnCreate": true,
-		"saveToTranscript": "ContactId"
-		}];
-		*/
-		
-		console.log('pre chat info: ', embedded_svc.settings.extraPrechatInfo);
-		
+
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
 			'https://collegeforadultlearning--devafd.my.salesforce.com',
-			'https://devafd-thecollegeforadultlearning.cs112.force.com/forms',
+			'https://devafd-collegeforadultlearning.cs112.force.com/SelfScheduling',
 			gslbBaseURL,
 			'00D0T0000008aPr',
 			'CAL_Chat',
